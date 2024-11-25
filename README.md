@@ -18,6 +18,8 @@ That way, you get the best of concurrency and parallelism in simple deployments.
 
 ### FastAPI
 
+v0.68
+
 FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+.
 
 The key features are:
@@ -34,6 +36,9 @@ The key features are:
 <small>* estimation based on tests on an internal development team, building production applications.</small>
 
 ### InfluxDB
+
+v1.8
+
 InfluxDB is an open-source time series database developed by the company InfluxData. It is written in the Go programming language for storage and retrieval of time series data in fields such as operations monitoring, application metrics, Internet of Things sensor data, and real-time analytics. It also has support for processing data from Graphite.
 
 * Has no external dependencies
@@ -51,7 +56,6 @@ Values can be 64-bit integers, 64-bit floating points, strings, and booleans. Po
 * A Unix-like system with Bash
 * Docker
 
-
 ## Setup
 
 0. 
@@ -64,7 +68,7 @@ Wait for the images to be downloaded and the containers to be set up.
 
 **DevBox**
 
-Attach a bash shell to the FastAPI container by executing the following script:
+Attach a bash shell to the DevBox container by executing the following script:
 
 2. 
 ```./003_attach_bash_to_devbox_container.sh```
