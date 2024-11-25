@@ -7,7 +7,6 @@ docker run -it --rm -p 80:80 \
        -v `pwd`/../App/:/home/user/app/ \
        -v `pwd`/../Test/:/home/user/test \ 
        -v `pwd`/../Data:/home/user/data  \
-       -v `pwd`/../Users:/home/user/users  \
        -v /etc/localtime:/etc/localtime:ro \
        `cat ./image_name` \
        bash
