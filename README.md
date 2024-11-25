@@ -114,7 +114,7 @@ All services are connected via the `pxl_influx_network` Docker network. This ens
 
 Wait for the images to be downloaded and the containers to be set up.
 
-**DevBox**
+### DevBox
 
 Attach a bash shell to the DevBox container by executing the following script:
 
@@ -124,8 +124,15 @@ Attach a bash shell to the DevBox container by executing the following script:
 ./003_attach_bash_to_devbox_container.sh
 ```
 
+Testing InfluxDB connection from the DevBox: 
 
-**InfluxDB**
+```
+cd Test
+python3 test_influx_conn.py
+```
+
+
+### InfluxDB
 
 Attach a bash shell to the InfluxDB container by executing the following script:
 
