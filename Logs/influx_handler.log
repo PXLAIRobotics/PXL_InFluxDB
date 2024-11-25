@@ -1,0 +1,32 @@
+2024-11-25 09:27:23,196 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:27:23,196 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:27:23,232 - influx_handler - ERROR - Exception when creating Influx DB client: HTTPConnectionPool(host='localhost', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22%22&db= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7848ad4b64a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-11-25 09:27:23,232 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:28:56,213 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:28:56,213 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:28:56,239 - influx_handler - ERROR - Exception when creating Influx DB client: HTTPConnectionPool(host='localhost', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22%22&db= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x78edf62d2410>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-11-25 09:28:56,239 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:31:43,495 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:31:43,495 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:31:43,503 - influx_handler - ERROR - Exception when creating Influx DB client: HTTPConnectionPool(host='localhost', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22%22&db= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b135b6ca410>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-11-25 09:31:43,504 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:32:10,847 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:32:10,847 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:32:10,848 - influx_handler - ERROR - Exception when creating Influx DB client: Failed to parse: http://['"pxl_influxdb"']:8086/query
+2024-11-25 09:32:10,848 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:32:24,521 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:32:24,521 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:32:24,555 - influx_handler - ERROR - Exception when creating Influx DB client: HTTPConnectionPool(host='%22pxl_influxdb%22', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22%22&db= (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x75f7b13aa440>: Failed to resolve '%22pxl_influxdb%22' ([Errno -2] Name or service not known)"))
+2024-11-25 09:32:24,556 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:32:44,362 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:32:44,362 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:32:44,364 - influx_handler - ERROR - Exception when creating Influx DB client: invalid name
+2024-11-25 09:32:44,364 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:33:12,261 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:33:12,261 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:33:12,263 - influx_handler - ERROR - Exception when creating Influx DB client: invalid name
+2024-11-25 09:33:12,263 - influx_handler - ERROR - Exception when querying Influx DB: 'NoneType' object has no attribute 'query'
+2024-11-25 09:33:25,161 - influx_handler - INFO - Querying Influx DB: SELECT * FROM "" WHERE time >= $start_time and time <= $end_time with params: {'start_time': ' 00:00:00', 'end_time': ' 00:00:00'}
+2024-11-25 09:33:25,161 - influx_handler - INFO - No influx client for port 8086 yet, creating new client
+2024-11-25 09:33:25,173 - influx_handler - INFO - New influx client created for port 8086
+2024-11-25 09:33:25,174 - influx_handler - ERROR - Exception when querying Influx DB: invalid measurement

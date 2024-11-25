@@ -1,0 +1,69 @@
+version: "3.5"
+services:
+  pxl_devbox:
+    build: ./01_pxl_devbox
+    image: "pxl_devbox:latest"
+    container_name: "pxl_devbox"
+    hostname: pxl_devbox
+    restart: always
+    ports:
+      - "80:80"
+    tty: true    
+    networks:
+      - pxl_influx_network
+    volumes:
+      - ./App:/home/user/app
+      - ./Data:/home/user/data
+      - ./Commands:/home/user/bin
+      - ./Logs:/home/user/logs
+      - ./Test:/home/user/test
+      - /etc/localtime:/etc/localtime:ro
+      
+ # InfluxDB
+
+  pxl_influxdb: 
+    restart: unless-stopped
+    environment:
+      - INFLUXDB_USER=${INFLUXDB_USER:-stage}
+      - INFLUXDB_USER_PASSWORD=${INFLUXDB_USER_PASSWORD:-stage}
+      - GATEWAY_PORT=8086
+    ports:
+      - "8086:8086"
+    healthcheck:
+      test: "ln -sf /bin/busybox /bin/wget && /bin/wget -q -Y off http://pxl_influxdb:8086/metrics -O /dev/null > /dev/null 2>&1"
+      interval: 25s
+      timeout: 3s
+      start_period: 30s
+    build: ./02_influxdb
+    image: "pxl_influxdb"
+    container_name: "pxl_influxdb"
+    hostname: "pxl_influxdb"
+    networks:
+      - pxl_influx_network
+    volumes:
+      - ./InfluxDB:/var/lib/influxdb
+      - /etc/localtime:/etc/localtime:ro
+      - ./Commands_Influx:/commands
+
+  # Chronograf: InfluxDB web interface
+  chronograf:
+    container_name: "chronograf"
+    restart: unless-stopped
+    image: chronograf:1.8-alpine
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./Data/chronograf:/var/lib/chronograf
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - pxl_influxdb
+    environment:
+      - INFLUXDB_URL=http://pxl_influxdb:8086
+      - INFLUXDB_USERNAME=${INFLUXDB_USER:-stage}
+      - INFLUXDB_PASSWORD=${INFLUXDB_USER_PASSWORD:-stage}
+    networks:
+      - pxl_influx_network
+
+networks:
+  pxl_influx_network:
+    name:   pxl_influx_network

@@ -1,0 +1,14 @@
+2024-11-25 09:27:23,196 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:28:56,212 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:31:43,495 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:31:43,495 - config - INFO - (INFLUX,influx_hostname): "pxl_influxdb"
+2024-11-25 09:32:10,847 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:32:10,847 - config - INFO - (INFLUX,influx_hostname): "pxl_influxdb"
+2024-11-25 09:32:24,521 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:32:24,521 - config - INFO - (INFLUX,influx_hostname): "pxl_influxdb"
+2024-11-25 09:32:44,362 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:32:44,362 - config - INFO - (INFLUX,influx_hostname): pxl_influxdb
+2024-11-25 09:33:12,261 - config - INFO - (INFLUX,db_names): 
+2024-11-25 09:33:12,261 - config - INFO - (INFLUX,influx_hostname): pxl_influxdb
+2024-11-25 09:33:25,161 - config - INFO - (INFLUX,db_names): test
+2024-11-25 09:33:25,161 - config - INFO - (INFLUX,influx_hostname): pxl_influxdb
