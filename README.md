@@ -59,10 +59,19 @@ Values can be 64-bit integers, 64-bit floating points, strings, and booleans. Po
 ## Setup
 
 0. 
-```./001_build_images.sh```
+
+
+```
+./001_build_images.sh
+```
+
 
 1. 
-```./002_create_and_start_containers.sh```
+
+```
+./002_create_and_start_containers.sh
+```
+
 
 Wait for the images to be downloaded and the containers to be set up.
 
@@ -71,12 +80,20 @@ Wait for the images to be downloaded and the containers to be set up.
 Attach a bash shell to the DevBox container by executing the following script:
 
 2. 
-```./003_attach_bash_to_devbox_container.sh```
+
+```
+./003_attach_bash_to_devbox_container.sh
+```
+
 
 **InfluxDB**
 
 Attach a bash shell to the InfluxDB container by executing the following script:
 
 2. 
-```./003_attach_bash_to_influxdb_container.sh```
+
+```
+./003_attach_bash_to_influxdb_container.sh
+```
+
 
