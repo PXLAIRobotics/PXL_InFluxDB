@@ -127,7 +127,7 @@ Attach a bash shell to the DevBox container by executing the following script:
 Testing InfluxDB connection from the DevBox: 
 
 ```
-cd Test
+cd test
 python3 test_influx_conn.py
 ```
 
