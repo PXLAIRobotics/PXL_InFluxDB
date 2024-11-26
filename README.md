@@ -114,7 +114,9 @@ All services are connected via the `pxl_influx_network` Docker network. This ens
 
 Wait for the images to be downloaded and the containers to be set up.
 
+
 2. Setup InfluxDB with username `admin` and password: `password`, and initialize the tokens for telegraf
+
 
 ```
 ./002_init_influx_and_telegraf.sh
@@ -127,7 +129,12 @@ Wait for the images to be downloaded and the containers to be set up.
 ./003_attach_bash_to_devbox_container.sh
 ```
 
+Testing InfluxDB connection from the DevBox: 
 
+```
+cd test
+python3 test_influx_conn.py
+```
 
 
 4. **InfluxDB**: Attach a bash shell to the InfluxDB container by executing the following script:
