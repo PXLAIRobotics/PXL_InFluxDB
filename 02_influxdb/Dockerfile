@@ -1,4 +1,4 @@
-FROM influxdb:1.8-alpine
+FROM influxdb:2.7-alpine
 
 # add openssh and clean
 RUN apk update \

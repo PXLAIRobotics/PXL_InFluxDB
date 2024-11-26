@@ -21,7 +21,7 @@ services:
       
  # InfluxDB
 
-  pxl_influxdb: 
+  pxl_influxdb:
     restart: unless-stopped
     environment:
       - INFLUXDB_USER=${INFLUXDB_USER:-stage}
@@ -41,29 +41,34 @@ services:
     networks:
       - pxl_influx_network
     volumes:
-      - ./InfluxDB:/var/lib/influxdb
+      - ./InfluxDB:/var/lib/influxdb  # Persist database data
+      - ./InfluxMeta:/var/lib/influxdb/meta # Persist metadata
       - /etc/localtime:/etc/localtime:ro
       - ./Commands_Influx:/commands
-
-  # Chronograf: InfluxDB web interface
-  chronograf:
-    container_name: "chronograf"
+  
+  telegraf:
+    image: telegraf:latest
+    container_name: "telegraf"
     restart: unless-stopped
-    image: chronograf:1.8-alpine
-    ports:
-      - '8888:8888'
-    volumes:
-      - ./Data/chronograf:/var/lib/chronograf
-      - /etc/localtime:/etc/localtime:ro
     depends_on:
       - pxl_influxdb
-    environment:
-      - INFLUXDB_URL=http://pxl_influxdb:8086
-      - INFLUXDB_USERNAME=${INFLUXDB_USER:-stage}
-      - INFLUXDB_PASSWORD=${INFLUXDB_USER_PASSWORD:-stage}
+    volumes:
+      - ./Telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /proc:/rootfs/proc:ro
+      - /sys:/rootfs/sys:ro
+      - /etc:/rootfs/etc:ro
     networks:
       - pxl_influx_network
+    environment:
+      - HOST_PROC=/rootfs/proc
+      - HOST_SYS=/rootfs/sys
+      - HOST_ETC=/rootfs/etc
+      - INFLUX_BUCKET=$INFLUX_BUCKET
+      - INFLUX_TOKEN=$INFLUX_TOKEN
+      - INFLUX_ORG=$INFLUX_ORG
+      
+  
 
 networks:
   pxl_influx_network:
-    name:   pxl_influx_network
+    name: pxl_influx_network
