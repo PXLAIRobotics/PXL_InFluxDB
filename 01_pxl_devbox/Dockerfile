@@ -32,7 +32,8 @@ RUN set -x \
     && pip3 install pyjwt==2.4.0 \
     && pip3 install bcrypt==4.0.0 \
     && pip3 install passlib==1.7.4 \
-    && pip3 install slowapi==0.1.6
+    && pip3 install slowapi==0.1.6 \
+    && pip3 install pandas==2.2.3
 
 
 # Copy requirements.txt and install the Python packages
