@@ -136,6 +136,11 @@ cd test
 python3 test_influx_conn.py
 ```
 
+You can start a jupyter environment by executing:
+```
+start_jupyter
+```
+(preferable in the home directory)
 
 4. **InfluxDB**: Attach a bash shell to the InfluxDB container by executing the following script:
 
