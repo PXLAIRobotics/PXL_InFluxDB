@@ -14,6 +14,8 @@ RUN set -x \
     && apt-get install -y python3-pip exuberant-ctags \
     && apt-get install -y git vim tmux nano htop sudo curl wget gnupg2 \
     && apt-get install -y bash-completion \
+    && apt-get install -y openssh-server \
+    && apt-get install net-tools \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -ms /bin/bash user \
     && echo "user:user" | chpasswd && adduser user sudo \
@@ -32,11 +34,19 @@ RUN set -x \
     && pip3 install passlib==1.7.4 \
     && pip3 install slowapi==0.1.6
 
+
+# Copy requirements.txt and install the Python packages
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --ignore-installed -r /tmp/requirements.txt
+
+
 RUN set -x \
-    && apt-get update \
-    && apt-get install -y openssh-server \
-    && apt-get install net-tools \
-    && rm -rf /var/lib/apt/lists/*
+    && pip3 install influxdb-client \
+    && pip3 install gluonts \
+    && pip3 install git+https://github.com/amazon-science/chronos-forecasting.git \
+    && pip3 install git+https://github.com/SalesforceAIResearch/uni2ts.git \
+    && pip3 install autogluon --extra-index-url https://download.pytorch.org/whl/cpu
+
 
 USER user
 WORKDIR /home/user
