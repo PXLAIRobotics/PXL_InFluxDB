@@ -43,6 +43,7 @@ RUN pip3 install --no-cache-dir --ignore-installed -r /tmp/requirements.txt
 RUN pip3 install git+https://github.com/amazon-science/chronos-forecasting.git
 RUN pip3 install autogluon --extra-index-url https://download.pytorch.org/whl/cpu
 
+RUN pip3 install influxdb-client==1.49.0
 
 USER user
 WORKDIR /home/user
